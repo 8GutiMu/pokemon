@@ -40,21 +40,14 @@ function crearPokemos(){
                               puntosAtaque.value);
 
   pokemons.push(pokemon);
-  mostrarPokemons();
+  mostrarPokemons(pokemon);
 
 }
 
-function mostrarPokemons(){
-  var listaPokemons = document.getElementById("listaPokemons");
-  var lista = document.getElementById("seleccion")
+function mostrarPokemons(pokemon){
 
-    pokemons.forEach(function(pokemon){
-    var elemento = document.createElement("option");
-    elemento.innerText =pokemon.name+" "+ pokemon.color+" "+ pokemon.puntosAtaque;
-    lista.appendChild(elemento)
-
-  })
-
-  listaPokemons.appendChild(lista)
-
+    var node = document.createElement("option");
+    var textnode = document.getElementById(pokemon.name);
+    node.appendChild(textnode);
+    document.getElementById("seleccion").appendChild(node);
 }
